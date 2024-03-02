@@ -1,0 +1,85 @@
+START
+    Define constants and structures
+
+    Define global variables
+
+    Function to initialize accounts
+        Loop through bankAccounts array
+            Initialize account number and isActive
+
+    Function to load accounts from file
+        Open file in read mode
+        If file is opened successfully
+            Read account details from file into bankAccounts array
+            Close the file
+
+    Function to save accounts to file
+        Open file in write mode
+        If file is opened successfully
+            Write account details from bankAccounts array to file
+            Close the file
+
+    Function to open account
+        Count available accounts
+        If no available slots
+            Print message: "No available account slots"
+            Return
+        Iterate through bankAccounts array
+            If account is not active
+                Prompt user to enter account holder name and initial balance
+                Set account as active
+                Print message: "Account opened successfully"
+                Save accounts to file
+                Exit loop
+
+    Function to close account
+        Prompt user to enter account number to close
+        Iterate through bankAccounts array
+            If account is active and matches entered account number
+                Set account as inactive
+                Print message: "Account closed successfully"
+                Save accounts to file
+                Exit loop
+        If account not found or already closed
+            Print message: "Account not found or already closed"
+
+    Function to update account
+        Prompt user to enter account number to update
+        Iterate through bankAccounts array
+            If account is active and matches entered account number
+                Prompt user to enter new account holder name and balance
+                Update account details
+                Print message: "Account updated successfully"
+                Save accounts to file
+                Exit function
+        If account not found
+            Print message: "Account not found"
+
+    Function to display all accounts
+        Print header: "Bank Accounts:"
+        Iterate through bankAccounts array
+            If account is active
+                Print account number, holder name, and balance
+
+    Function to find account
+        Prompt user to enter account number to find
+        Iterate through bankAccounts array
+            If account is active and matches entered account number
+                Print account details
+                Exit function
+        If account not found
+            Print message: "Account not found"
+
+    Main function
+        Initialize accounts
+        Load accounts from file
+
+        Display menu in a loop until user chooses to exit
+            Prompt user to enter choice
+            Switch based on choice
+                Call respective function
+            If choice is to exit
+                Print message: "Exiting program. Thank you!"
+
+    Return 0
+END
